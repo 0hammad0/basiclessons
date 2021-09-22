@@ -35,8 +35,8 @@ class WelcomeController extends Controller
 
         $products = Product::find($id);
 
-        // return view('layouts.show_product.showproduct')->with('products', $products);
+        // return view('show_product.showproduct')->with('products', $products);
         
-        return view('layouts.show_product.showproduct', compact('products'));
+        return view('show_product.showproduct', compact('products'));
     }
 }
