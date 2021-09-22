@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,5 @@ Route::get('/home', [WelcomeController::class, "index"]);
 Route::get('/services', [WelcomeController::class, "services"]);
 
 Route::get('/show/{id}', [WelcomeController::class, "show_product"]);
+
+Route::get('/create', [ProductController::class, "create"]);

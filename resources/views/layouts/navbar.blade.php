@@ -8,8 +8,8 @@
             <li><a href="{{url('/about')}}">About</a></li>
             <li><a href="{{url('/services')}}">Services</a></li>
         </ul>
-         <!--<ul class="nav navbar-nav navbar-right">
-            <li><a href="#">New product</a></li>
-        </ul>-->
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="{{URL::to('/create')}}">New product</a></li>
+        </ul>
     </div>
 </nav>
