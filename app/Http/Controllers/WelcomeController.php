@@ -21,8 +21,8 @@ class WelcomeController extends Controller
     }
     
     public function services () {
-        // $products = DB :: table ('products') -> get();
-        $products = Product::all();
+        $products = DB :: table ('products') -> paginate(3);
+        // $products = Product::all();
 
         // return view('services') -> with('products', $products);
         return view('services', compact ('products'));

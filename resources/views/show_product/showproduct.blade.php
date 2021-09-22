@@ -7,7 +7,7 @@
 @section('content')
 
         <h1>
-                {{$products -> name}} Product
+                {{$products -> name}} Product Details
         </h1>
 
         <div class="well">
@@ -17,7 +17,7 @@
                 <p>{{$products -> description}}</p>
 
                 <hr>
-                <h3>{{$products -> created_at}}</h3>
+                <h3>Written at {{$products -> created_at}}</h3>
         </div>
 
 
