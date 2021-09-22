@@ -1,11 +1,11 @@
-@extends('app')
+@extends('layouts.app')
 
 @section('title')
         create
 @endsection
 
 @section('content')
-        <form action="{{url('/saveproduct')}}" method="POST" class="form-horizontal">
+        <form action="{{url('/saveproduct')}}" method="post" class="form-horizontal">
             {{csrf_field()}}
 
             <div class="form-group">
@@ -20,7 +20,7 @@
 
             <div class="form-group">
                 <label>Product Description</label>
-                <textarea name="description" id="description" cols="30" rows="10" placeholder="Product description"></textarea>
+                <textarea name="description" id="description" cols="145" rows="5" placeholder="Product description"></textarea>
             </div>
 
             <input type="submit" class="btn btn-primary" name="save" value="Add Product">
