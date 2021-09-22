@@ -5,8 +5,9 @@
 @endsection
 
 @section('content')
-        <form action="{{url('/saveproduct')}}" method="post" class="form-horizontal">
+        <form action="{{url('/save')}}" method="POST" class="form-horizontal">
             {{csrf_field()}}
+            {{-- @csrf --}}
 
             <div class="form-group">
                 <label>Product Name</label>
@@ -20,10 +21,10 @@
 
             <div class="form-group">
                 <label>Product Description</label>
-                <textarea name="description" id="description" cols="145" rows="5" placeholder="Product description"></textarea>
+                <textarea name="description" id="description" cols="145" rows="5" class="form-control"> </textarea>
             </div>
 
-            <input type="submit" class="btn btn-primary" name="save" value="Add Product">
+            <input type="submit" class="btn btn-primary" value="Add Product">
 
         </form>
 @endsection

@@ -25,3 +25,5 @@ Route::get('/services', [WelcomeController::class, "services"]);
 Route::get('/show/{id}', [WelcomeController::class, "show_product"]);
 
 Route::get('/create', [ProductController::class, "create"]);
+
+Route::post('/save', [ProductController::class, "save"]);
