@@ -18,6 +18,11 @@
 
                 <hr>
                 <h3>Written at {{$products -> created_at}}</h3>
+
+                <hr>
+                <a href='{{url('/edit', $products -> id)}}' class='btn btn-primary'> Edit </a>
+                
+                <a href='{{url('/delete', $products -> id)}}' class='btn btn-danger'>Delete</a>
         </div>
 
 

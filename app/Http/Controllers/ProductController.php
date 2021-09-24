@@ -28,4 +28,11 @@ class ProductController extends Controller
 
         return redirect()->back();
     }
+
+    public function edit ($id) {
+        $product = Product :: find ($id);
+
+        // return view ('pages.edit', compact ('product'));
+        return view ('pages.edit') -> with ('product', $product);
+    }
 }

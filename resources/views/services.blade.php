@@ -12,7 +12,7 @@
 
         <div class="well">
 
-                <h1> <a href="/show/{{$product->id}}"> {{$product -> name}} </a> </h1>
+                <h1> <a href="{{url('/show', $product -> id)}}"> {{$product -> name}} </a> </h1>
 
                 <h2>{{$product -> price}} $</h2>
                 

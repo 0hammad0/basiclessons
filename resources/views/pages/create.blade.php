@@ -41,20 +41,26 @@
 
         {{-- {!!Form::open(['action' => 'App\Http\Controllers\ProductController::class, saveproduct', 'method' => 'post', 'class' => 'form-form-horizontal'])!!} --}}
 
-        {!!Form::open(['action' => 'App\Http\Controllers\ProductController@saveproduct', 
-                                                    'method' => 'POST', 'class' => 'form-horizontal'])!!}
+        {!!Form::open(['action' => 'App\Http\Controllers\ProductController@saveproduct', 'method' => 'POST', 'class' => 'form-horizontal'])!!}
 
+        <div class="form-group">
         {{Form::label('', 'Name')}}
         {{Form::text('name', '', ['placeholder' => 'Product Name', 'class' => 'form-control'])}}
+        </div>
 
+        <div class="form-group">
         {{Form::label('', 'Price')}}
         {{Form::text('price', '', ['placeholder' => 'Product price', 'class' => 'form-control'])}}
+        </div>
 
+        <div class="form-group">
         {{Form::label('', 'Description')}}
-        {{Form::textarea('description', '', ['placeholder' => 'Product description', 'class'
-                                                                                    => 'form-control'])}}
+        {{Form::textarea('description', '', ['placeholder' => 'Product description', 'class'=> 'form-control'])}}
+        </div>
 
-        {{Form::submit('', 'Add Product', ['class' => 'btn btn-primary'])}}
+        <div class="form-group">
+        {{Form::submit('submit', ['class' => 'btn btn-primary'])}}
+        </div>
 
         {!!Form::close()!!}
 
