@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UpdateProductController;
+use App\Http\Controllers\ResourceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\UpdateProductController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [WelcomeController::class, "welcome"]);
+Route::get('/', [WelcomeController::class, "index"]);
 
 Route::get('/about', [WelcomeController::class, "about"]);
 
@@ -37,3 +38,11 @@ Route::post('/edit_product/{id}' , [UpdateProductController::class, "edit_produc
 Route::get('/delete/{id}', [UpdateProductController::class, "delete_product"]);
 
 //{{---Edit and Delete Routes End}}
+
+Route::resource('resource', 'ResourceController');
+
+// route jab banaty hain to bar bar commands dalni prti hain... phir route chalti hain
+// laravel guard ka pta hh? nope
+// user types ka han
+// is project ma hain usertypes?nai,ok,ok,ok,okay
+// or ak chez welcome ki jaga koi or page kasy link krey

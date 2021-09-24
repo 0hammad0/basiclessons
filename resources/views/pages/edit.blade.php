@@ -15,7 +15,7 @@
 
     @endif
 
-        <form action="{{url('/edit_product', $product -> id)}}" method="post" class="form-horizontal">
+        {{-- <form action="{{url('/edit_product', $product -> id)}}" method="post" class="form-horizontal">
                 @csrf
             {{csrf_field()}}
 
@@ -38,14 +38,14 @@
 
             <a href="{{ url()->previous() }}" class="btn btn-default">Back</a>
 
-        </form>
+        </form> --}}
 
 
 
-        {{-- {!!Form::open(['action' => 'App\Http\Controllers\UpdateProductController@edit_product', 'method' => 'POST', 'class' => 'form-horizontal'])!!}
-        
+        {!!Form::open(['action' => ['UpdateProductController@edit_product',$product->id], 'method' => 'POST', 'class' => 'form-horizontal'])!!}
+
         {{csrf_field()}}
-        @csrf
+        {{-- @csrf --}}
 
         {{Form::hidden('id', $product -> id)}}
 
@@ -66,8 +66,10 @@
 
         <div class="form-group">
         {{Form::submit('submit', ['class' => 'btn btn-primary'])}}
+
+        <a href="{{ url('/services') }}" class="btn btn-default">Back</a>
         </div>
 
-        {!!Form::close()!!} --}}
+        {!!Form::close()!!}
 
 @endsection
