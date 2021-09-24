@@ -46,3 +46,5 @@ Route::resource('resource', 'ResourceController');
 // user types ka han
 // is project ma hain usertypes?nai,ok,ok,ok,okay
 // or ak chez welcome ki jaga koi or page kasy link krey
+
+//kasy krty hain?
