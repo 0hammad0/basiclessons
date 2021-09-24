@@ -8,11 +8,11 @@
         <ul class="nav navbar-nav">
             <li><a href="{{url('/home')}}">Home</a></li>
             <li><a href="{{url('/about')}}">About</a></li>
-            <li><a href="{{url('/services')}}">Services</a></li>
+            <li><a href="{{url('/resource')}}">Services</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-            <li><a href="{{URL::to('/create')}}">Create product</a></li>
+            <li><a href="{{URL::to('/resource/create')}}">Create product</a></li>
         </ul>
         
     </div>

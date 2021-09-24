@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Session;
 
 class ResourceController extends Controller
 {
@@ -36,6 +37,12 @@ class ResourceController extends Controller
      */
     public function store(Request $request)
     {
+        // $this -> validate ($request, [
+        //     'name' => 'require',
+        //     'price' => 'require',
+        //     'description' => 'require'
+        //  ] );
+
         $data = new Product();
         $data -> name = $request -> name;
         $data -> price = $request -> price;
@@ -43,9 +50,9 @@ class ResourceController extends Controller
 
         $data -> save();
 
-        Session::put('success', 'The product has been saved');
+        Session::put ('success', 'Product added');
 
-        return redirect()->back();
+        return redirect('/resource');
     }
 
     /**
@@ -56,7 +63,10 @@ class ResourceController extends Controller
      */
     public function show($id)
     {
-        //
+        $products = Product::find($id);
+
+        // return view ('/resources.showproduct')->with('products', $products);
+        return view ('/resources.showproduct', compact ('products'));
     }
 
     /**
@@ -67,7 +77,10 @@ class ResourceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product :: find ($id);
+
+        // return view ('pages.edit', compact ('product'));
+        return view ('pages.edit') -> with ('product', $product);
     }
 
     /**
@@ -79,7 +92,17 @@ class ResourceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+
+        $product -> name = $request -> name;
+        $product -> price = $request -> price;
+        $product -> description = $request -> description;
+
+        $product -> update();
+
+        Session::put('update', 'The product has been updated');
+
+        return redirect('/resource');
     }
 
     /**
@@ -90,6 +113,12 @@ class ResourceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product :: Find ($id);
+
+        $product -> delete ();
+
+        Session::put('update', 'The product has been deleted');
+
+        return redirect ('/resource');
     }
 }

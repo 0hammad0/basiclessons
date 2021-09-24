@@ -42,7 +42,7 @@
 
 
 
-        {!!Form::open(['action' => ['UpdateProductController@edit_product',$product->id], 'method' => 'POST', 'class' => 'form-horizontal'])!!}
+        {!!Form::open(['action' => 'ResourceController@update', 'method' => 'POST', 'class' => 'form-horizontal'])!!}
 
         {{csrf_field()}}
         {{-- @csrf --}}
@@ -62,6 +62,10 @@
         <div class="form-group">
         {{Form::label('', 'Description')}}
         {{Form::textarea('description', $product -> description, ['placeholder' => 'Product description', 'class'=> 'form-control'])}}
+        </div>
+
+        <div class="form-group">
+            {{Form::hidden('_method', 'PUT')}}
         </div>
 
         <div class="form-group">
