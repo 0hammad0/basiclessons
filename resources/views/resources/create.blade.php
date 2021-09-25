@@ -40,7 +40,7 @@
 
 
 
-        {!!Form::open(['action' => 'ResourceController@store', 'method' => 'POST', 'class' => 'form-horizontal'])!!}
+        {!!Form::open(['action' => 'ResourceController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data' , 'class' => 'form-horizontal'])!!}
 
         <div class="form-group">
         {{Form::label('', 'Name')}}
@@ -51,6 +51,11 @@
         {{Form::label('', 'Price')}}
         {{Form::text('price', '', ['placeholder' => 'Product price', 'class' => 'form-control'])}}
         </div>
+
+        <div class="form-group">
+            {{Form::label('', 'Product Image')}}
+            {{Form::file('image', ['class' => 'form-control'])}}
+            </div>
 
         <div class="form-group">
         {{Form::label('', 'Description')}}

@@ -37,22 +37,47 @@ class ResourceController extends Controller
      */
     public function store(Request $request)
     {
-        // $this -> validate ($request, [
-        //     'name' => 'require',
-        //     'price' => 'require',
-        //     'description' => 'require'
-        //  ] );
+        $this -> validate ($request, [
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'image' => 'image|nullable|max:1999'
+         ] );
 
-        $data = new Product();
-        $data -> name = $request -> name;
-        $data -> price = $request -> price;
-        $data -> description = $request -> description;
+        print('this is '.$request -> image);
 
-        $data -> save();
+        echo '<pre></pre>';
+        $imagename1 = $request -> image -> getClientOriginalName();
+        print ('This origanl name of image '. $imagename1);
 
-        Session::put ('success', 'Product added');
+        echo '<pre></pre>';
+        $nameimage = pathinfo($imagename1, PATHINFO_FILENAME);
+        print ('This origanl name of image '. $nameimage);
 
-        return redirect('/resource');
+        echo '<pre></pre>';
+        $image = $request->image;
+        $imagename2 = time().'.'.$image->getClientOriginalExtension();
+        print ('this is the image '.$imagename2);
+
+        echo '<pre></pre>';
+        $ext = $image -> getClientOriginalExtension();// only extention
+        $imagenameext = $image -> getClientOriginalName() ;// getting name with extention (like image.jpg etc)
+        $imagename = pathinfo($imagenameext, PATHINFO_FILENAME);//getting name with out extention
+        $nameofimage = $imagename.'_'.time().'.'.$ext;//giving time as name
+        print('many likha ha ya ' .$nameofimage);
+
+        // $request->image->move('chefimage', $imagename);// to save in data base and folder
+
+        // $data = new Product();
+        // $data -> name = $request -> name;
+        // $data -> price = $request -> price;
+        // $data -> description = $request -> description;
+
+        // $data -> save();
+
+        // Session::put ('success', 'Product added');
+
+        // return redirect('/resource');
     }
 
     /**
