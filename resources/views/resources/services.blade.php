@@ -33,9 +33,11 @@
 
         <div class="well">
 
-                <h1> <a href="/resource/{{$product -> id}}"> {{$product -> name}} </a> </h1>
+                <h1> {{$product -> name}} </h1>
 
                 <h2>{{$product -> price}} $</h2>
+
+                <a href="/resource/{{$product -> id}}" class='btn btn-deafult'>Show Details</a>
                 
         </div>
 

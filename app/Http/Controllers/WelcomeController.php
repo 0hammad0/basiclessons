@@ -8,9 +8,9 @@ use App\Models\Product;
 
 class WelcomeController extends Controller
 {
-    public function welcome () {
-        return view('welcome');
-    }
+    // public function welcome () {
+    //     return view('welcome');
+    // }
 
     public function about () {
         return view('about');

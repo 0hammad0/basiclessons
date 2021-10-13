@@ -23,6 +23,7 @@
                 <a href='/resource/{{$products -> id}}/edit' class='btn btn-primary'> Edit </a>
                 
                 {{-- <a href='{{url('/delete', $products -> id)}}' class='btn btn-danger'>Delete</a> --}}
+                
 
                 {!!Form::open(['action' => ['ResourceController@destroy', $products -> id], 'class' => 'pull-right'])!!}
                 {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}

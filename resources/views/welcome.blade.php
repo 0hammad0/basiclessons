@@ -1,4 +1,4 @@
-{{-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -129,10 +129,10 @@
             </div>
         </div>
     </body>
-</html> --}}
+</html>
 
 
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('title')
         Home
@@ -144,4 +144,4 @@
             <h1>Welcome to the laravel 7.X project</h1>
         </div>
 
-@endsection
+@endsection --}}
